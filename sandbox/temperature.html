@@ -25,9 +25,25 @@
 
   
   
-<h1>Title</h1>
+<h1>Temperature</h1>
   <script>
-    
+    function convertTemperature(){
+      var getChoice = document.getElementById('temp').value;
+      if(getChoice == "toF"){
+        calculateToF();
+      } else {
+        calculateToC();
+      }
+    }
+
+  function calculateToF(){
+    var f=document.getElementById('temperature').value;
+    document.getElementById('result').innerHTML = "Fahrenheit: " + (((9*parseInt(f))+(32*5))/5);
+  }
+  function calculateToC(){
+    var c=document.getElementById('temperature').value
+    document.getElementById('result').innerHTML = "Celsius: " + ((5*(parseInt(c)-32))/9);
+  }
   </script>
 </head>
 
@@ -43,7 +59,7 @@
     </select>
     <br>
     <label for="temperature">Temperature:</label><br>
-
+<input type="text" id="temperature" name="temperature"><br>
     <p id = "result"></p>
     <button id = "calculate" onclick="convertTemperature()">Calculate</button>
 

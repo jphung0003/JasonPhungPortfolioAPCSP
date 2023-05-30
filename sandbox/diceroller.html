@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Jason Phung's Portfolio</title>
 
@@ -23,28 +22,35 @@
     <a class="nav-link" href="index.html">Sandbox</a>
   </li>
 </ul>
+
+  
+  
+<h1>Dice Roller</h1>
+  <script>
+    var rolls = "";
+
+    function rollDie(){
+      var die = Math.round(Math.random()*5)+1;
+      var image = "images/die" + die + ".jpg";
+      document.getElementById("dieHolder").src=image;
+      rolls += die;
+      console.log(rolls);
+      document.getElementById("rolls").innerHTML = rolls;
+    }
+  </script>
 </head>
 
 <body>
-<div class="container">
-  <center>
-    <h1>Sandbox</h1> <br>
-<a href="intro.html">Introduction</a>
+  <div class="container">
+    <h3>Dice Roller</h3>
     <br>
-<a href="questions.html">Questions</a>
-<br>
-    <a href="average.html">Average Calculator</a>
+    <button type="button" class="btn btn-danger"
+      onClick="rollDie()">Roll</button>
     <br>
-  <a href="countchange.html">Count Change</a>
     <br>
-<a href="temperature.html">Temperature</a>
-<br>
-<a href="diceroller.html">Dice Roller</a>
-<br>
-
-  <script src="script.js"></script>
-  </center>
-</div>
+    <img id= "dieHolder"/>
+    <p id="rolls"></p>
+  </div>
 </body>
 
 </html>
