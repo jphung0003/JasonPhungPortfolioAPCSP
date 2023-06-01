@@ -39,12 +39,12 @@
   function calculateWpercent(){
     var w=document.getElementById('taxation').value;
     var w1=document.getElementById('taxation1').value;
-    document.getElementById('result').innerHTML = "Total With Tax: " + (w * (w1 + 1)) ;
+    document.getElementById('result').innerHTML = "Total With Tax: " + (parseInt(w)*(parseInt(w1)/100) + parseInt(w)) ;
   }
   function calculateFpercent(){
     var f=document.getElementById('taxation').value
     var f1=document.getElementById('taxation1').value;
-    document.getElementById('result').innerHTML = "Percent Tax: " + (f);
+    document.getElementById('result').innerHTML = "Percent Tax: " + (((parseInt(f1)-parseInt(f))/parseInt(f))*100) + "%";
   }
   </script>
 </head>
